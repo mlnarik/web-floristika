@@ -16,7 +16,8 @@ const StickyHeader = styled.header`
   height: 3rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 5rem;
+  padding: 0.75rem;
+
 
   text-align: center;  
   color: #333333;
@@ -25,10 +26,7 @@ const StickyHeader = styled.header`
   z-index: 1;
   opacity: .9;
 
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-
+  border-radius: 0 0 10px 10px;
   background-color: white;
 `
 export const Header = () => (

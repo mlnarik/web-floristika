@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import "~reset.css/reset.css";
+@import '~semantic-ui-css/semantic.min.css';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -17,7 +20,7 @@ body {
   width: 100vw;
   margin: 0;
   background-color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   perspective: 1px;
@@ -25,3 +28,11 @@ body {
   overflow-y: auto;
 }
 
+p + p {
+  padding-top: 1rem;
+}
+
+main {
+  text-align: center; 
+  margin: 0 auto;
+}

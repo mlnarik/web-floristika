@@ -1,20 +1,13 @@
 import React from 'react';
 
 import { MainContent } from '../components/content/MainContent';
-import styled from '@emotion/styled';
+import { ServicesList } from '../components/content/ServicesList';
 
-const MainDiv = styled.div`
-  text-align: center;
-  margin: 0 auto;`
-
-function App() {
-  return (
-    <div className="App">
-      <MainDiv>          
-        <MainContent />
-      </MainDiv>
-    </div>
-  );
-}
+const App = () => (
+    <main>          
+      <MainContent bgImgName='index'>
+        <ServicesList />
+      </MainContent>
+    </main>)
 
 export default App;

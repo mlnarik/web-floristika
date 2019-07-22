@@ -14,7 +14,6 @@ class MyApp extends App {
         <Head>
           <title>Svatební floristika - Miroslava Blatná</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
           <link rel="icon" type="image/png" href="/static/logo.png" />
         </Head>
         <Header />

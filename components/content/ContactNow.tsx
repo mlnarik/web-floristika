@@ -12,7 +12,7 @@ export const ContactNow = () => (
         Rádi s Vámi prodiskutujeme Vaše představy. Tešíme se na Vás.
     </h3>
     <Link href="/kontakt">
-        <Button primary size='big'>Kontaktovat a objednat konzultaci zdarma</Button>
+        <Button primary size='big'>Kontaktovat a požádat o konzultaci zdarma</Button>
     </Link>
 </ContactDiv>
 )

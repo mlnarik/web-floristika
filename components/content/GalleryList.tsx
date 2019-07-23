@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { ContactNow } from './ContactNow';
+import Img from 'react-image'
 
-const Image = styled.img`
-display: inline-block;
+const Image = styled(Img)`
+    display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
     width: 50%;
@@ -12,8 +13,8 @@ display: inline-block;
         width: 100%;
     }    
     `
-const SmallImage = styled.img`
-display: inline-block;
+const SmallImage = styled(Img)`
+    display: inline-block;
 
     border: 1px solid black;
     border-radius: 4px;

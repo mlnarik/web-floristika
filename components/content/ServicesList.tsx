@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import Img from 'react-image'
 import { ContactNow } from './ContactNow';
 
-const Image = styled.img`
+const Image = styled(Img)`
     display: inline-block;
 
     border: 1px solid black;
@@ -48,7 +49,7 @@ const InfoDiv = styled.div`
     position: absolute;
     right: 8%;
     top: 8%;
-    width: 20rem;
+    width: 22rem;
     padding: 0.75rem;
     border: 1px solid black;
     border-radius: 4px;
@@ -117,7 +118,7 @@ export const ServicesList = () => (
             <Image src="/static/gallery/3.jpg" />
             <InfoDiv>
                 <InfoHeaderH3>Obřad v Botanické zahradě</InfoHeaderH3>
-                Jako pečovatelka Botanické zahrady a arboreta Mandelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady. 
+                Jako zaměstnanec Botanické zahrady a arboreta Mandelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady. 
             </InfoDiv>              
         </SmallFrameDiv>         
         <ExtraSmallFrameDiv>

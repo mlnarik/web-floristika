@@ -1,7 +1,8 @@
 @import "~reset.css/reset.css";
-@import '~semantic-ui-css/semantic.min.css';
 
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+$font-url: 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
+$font-family: 'Roboto', sans-serif;
+@import '~semantic-ui-sass/semantic-ui';
 
 
 *, *::after, *::before {
@@ -22,7 +23,7 @@ body {
 
   margin: 0;
   background-color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.1rem;

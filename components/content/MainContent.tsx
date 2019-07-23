@@ -16,7 +16,7 @@ const ParallaxedImage = styled<'div', any>('div')`
     margin: 0 auto;
 
     &::after {
-        position: absolute;
+        position: fixed;
         content: "";
         top: 0;
         left: 0;

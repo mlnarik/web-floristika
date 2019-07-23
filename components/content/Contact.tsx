@@ -26,7 +26,7 @@ export const Contact = () => {
     
     return (       
     <>         
-    Konzultace je zcela ZDARMA
+    Konzultace je zcela ZDARMA. Rádi Vám poradíme a prodiskutujeme Vaše představy.
     <br />
     <br />
     <Form style={{ width: '100%' }}>

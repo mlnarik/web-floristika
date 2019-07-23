@@ -34,6 +34,7 @@ const BackgroundDiv = styled.div`
 
     width: 100vw;
     max-width: 1200px;
+    min-width: 300px;
     margin: 0 auto;
     padding: 5rem;
 

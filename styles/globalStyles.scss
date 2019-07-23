@@ -18,6 +18,8 @@ html {
 body {
   height: 100vh;
   width: 100vw;
+  min-width: 300px;  
+
   margin: 0;
   background-color: white;
   font-family: 'Roboto', sans-serif;
@@ -28,6 +30,11 @@ body {
   overflow-x: hidden;
   overflow-y: auto;  
   perspective: 1px;
+
+  @supports (display:-ms-grid) { 
+    transform-style: flat;
+    perspective: 0;
+  }  
 }
 
 p + p {

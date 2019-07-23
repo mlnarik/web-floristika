@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-import { Contact } from './Contact';
-import Link from 'next/link';
-import { Button } from 'semantic-ui-react';
+import { ContactNow } from './ContactNow';
 
 const Image = styled.img`
     display: inline-block;
@@ -26,7 +24,25 @@ const SmallFrameDiv = styled.div`
         position: static;
         flex: 0 0 100%;
     }    
-    `       
+    `   
+    
+const ExtraSmallFrameDiv = styled.div`
+    flex: 0 0 25%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    
+    @media screen and (max-width: 1100px) {
+        position: static;
+        flex: 0 0 50%;
+    }
+
+    @media screen and (max-width: 650px) {
+        position: static;
+        flex: 0 0 100%;
+    }   
+     
+    `      
 
 const InfoDiv = styled.div`
     position: absolute;
@@ -43,6 +59,7 @@ const InfoDiv = styled.div`
 
     @media screen and (max-width: 1100px) {
         position: static;
+        width: 100%;
     }
     `   
 
@@ -103,18 +120,18 @@ export const ServicesList = () => (
                 Jako pečovatelka Botanické zahrady a arboreta Mandelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady. 
             </InfoDiv>              
         </SmallFrameDiv>         
-        <SmallFrameDiv>
+        <ExtraSmallFrameDiv>
             <Image src="/static/gallery/7.jpg" />
-        </SmallFrameDiv>      
-        <SmallFrameDiv>
+        </ExtraSmallFrameDiv>      
+        <ExtraSmallFrameDiv>
             <Image src="/static/gallery/8.jpg" />
-        </SmallFrameDiv>   
-        <SmallFrameDiv>
+        </ExtraSmallFrameDiv>   
+        <ExtraSmallFrameDiv>
             <Image src="/static/gallery/2.jpg" />
-        </SmallFrameDiv>
-        <SmallFrameDiv>
+        </ExtraSmallFrameDiv>
+        <ExtraSmallFrameDiv>
             <Image src="/static/gallery/1.jpg" />
-        </SmallFrameDiv>   
-        <Link href="/kontakt"><Button primary size='big'>Kontaktovat ihned</Button></Link>
+        </ExtraSmallFrameDiv>   
+        <ContactNow />
     </>
 )

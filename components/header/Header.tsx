@@ -23,7 +23,7 @@ const StickyHeader = styled.header`
   color: #333333;
   font-size: 1.3rem;
   font-weight: 600;
-  z-index: 1;
+  z-index: 2;
   opacity: .9;
 
   border-radius: 0 0 10px 10px;

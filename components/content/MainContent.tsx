@@ -29,6 +29,7 @@ const ParallaxedImage = styled<'div', any>('div')`
         background: url(${props => props.url}) center no-repeat;
         background-size: 100%;   
         background-origin: 50% 50%;
+        z-index: -1;
     }
 
 `    

@@ -15,7 +15,7 @@ const PageLabel = styled.h1`
 `
 
 const PageSubLabel = styled.h2`
-    padding-top: 10rem;
+    padding-top: 2rem;
     font-size: 2rem;        
 `
 

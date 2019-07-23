@@ -21,7 +21,7 @@ const StickyHeader = styled.header`
 
   text-align: center;  
   color: #333333;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   z-index: 1;
   opacity: .9;

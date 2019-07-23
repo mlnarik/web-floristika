@@ -16,8 +16,6 @@ const MenuItem = styled.li`
     margin: 0;
     padding: 0 3rem;    
     list-style-type: none;
-
-
     
     @media screen and (max-width: 600px) {
         padding: 0.75rem;

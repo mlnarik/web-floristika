@@ -23,9 +23,11 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  perspective: 1px;
+  font-size: 1.1rem;
+  transform-style: preserve-3d;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto;  
+  perspective: 1px;
 }
 
 p + p {

@@ -1,15 +1,11 @@
-import React, { Props } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { Logo } from '../header/Logo';
-
-const ParallaxDiv = styled.div`
-  transform-style: preserve-3d;
-`
 
 const ParallaxedImage = styled<'div', any>('div')`
     position: relative;
 
-    height: 70vh;
+    height: 60vh;
     padding-top: 5rem;
 
     text-align: middle;
@@ -21,14 +17,12 @@ const ParallaxedImage = styled<'div', any>('div')`
         top: 0;
         left: 0;
         right: 0;
-        height: 100vh;
-        width: 100vw;
-        min-width: 2000px;        
-        transform: translateY(150px) translateZ(-3px) scale(4.5);
+        height: 100vh;      
+        transform: translateY(150px) translateZ(-1px) scale(2.5);
 
         background: url(${props => props.url}) center no-repeat;
-        background-size: 100%;   
-        background-origin: 50% 50%;
+        background-size: cover;   
+        background-position: 50%;
         z-index: -1;
     }
 
@@ -49,14 +43,15 @@ const BackgroundDiv = styled.div`
  
 
 export const MainContent = (props) => {
+
     const url = `/static/header/${props.bgImgName}.jpg`;
     return (
-        <ParallaxDiv>
+        <div>
             <ParallaxedImage url={url}>
                 <Logo />
             </ParallaxedImage>
             <BackgroundDiv>
                 {props.children}
             </BackgroundDiv>
-        </ParallaxDiv>);
+        </div>);
 }

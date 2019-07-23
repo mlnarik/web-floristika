@@ -9,14 +9,14 @@ const Image = styled(Img)`
     border-radius: 4px;
     width: 100%;`
 
-const FrameDiv = styled.div`
+const BigFrameDiv = styled.div`
     flex: 0 0 100%;
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    `    
+    `
 
-const SmallFrameDiv = styled.div`
+const FrameDiv = styled.div`
     flex: 0 0 50%;
     position: relative;
     display: flex;
@@ -25,9 +25,9 @@ const SmallFrameDiv = styled.div`
         position: static;
         flex: 0 0 100%;
     }    
-    `   
-    
-const ExtraSmallFrameDiv = styled.div`
+    `
+
+const SmallFrameDiv = styled.div`
     flex: 0 0 25%;
     position: relative;
     display: flex;
@@ -43,7 +43,7 @@ const ExtraSmallFrameDiv = styled.div`
         flex: 0 0 100%;
     }   
      
-    `      
+    `
 
 const InfoDiv = styled.div`
     position: absolute;
@@ -62,26 +62,26 @@ const InfoDiv = styled.div`
         position: static;
         width: 100%;
     }
-    `   
+    `
 
 const InfoHeaderH3 = styled.h3`
     font-weight: 600;
     padding-bottom: 0.5rem;
-`    
+`
 
 export const ServicesList = () => (
     <>
-        <FrameDiv>
+        <BigFrameDiv>
             <Image src="/static/gallery/6.jpg" />
             <InfoDiv>
-            <InfoHeaderH3>Osobitý přístup</InfoHeaderH3>
-            Floristikou se zabývám už několik let a je mou velkou zálibou a koníčkem. 
-            Specializuji se na svatební kytice a svatební květinovou výzdobu.
-            Vše z čerstvě nařezaných a z Holandska dovezených květin.
-            Podle Vašeho přání můžu udělat také květiny z lučního kvítí, případně suché vazby.
+                <InfoHeaderH3>Osobitý přístup</InfoHeaderH3>
+                Floristikou se zabývám už několik let a je mou velkou zálibou a koníčkem.
+                Specializuji se na svatební kytice a svatební květinovou výzdobu.
+                Vše z čerstvě nařezaných a z Holandska dovezených květin.
+                Podle Vašeho přání můžu udělat také květiny z lučního kvítí, případně suché vazby.
             </InfoDiv>
-        </FrameDiv>
-        <FrameDiv>
+        </BigFrameDiv>
+        <BigFrameDiv>
             <Image src="/static/gallery/9.jpg" />
             <InfoDiv>
                 <InfoHeaderH3>Spokojenost je předností</InfoHeaderH3>
@@ -89,50 +89,50 @@ export const ServicesList = () => (
                 A to s láskou a citem pro detail a kopozici.
                 Vázání svatebních kytic představuje pro mne velikou radost a potěšení.
             </InfoDiv>
-        </FrameDiv>
-        <SmallFrameDiv>
-            <Image src="/static/gallery/11.jpg" />
-        </SmallFrameDiv>    
-        <SmallFrameDiv>
-            <Image src="/static/gallery/12.jpg" />
-        </SmallFrameDiv>            
+        </BigFrameDiv>
         <FrameDiv>
+            <Image src="/static/gallery/11.jpg" />
+        </FrameDiv>
+        <FrameDiv>
+            <Image src="/static/gallery/12.jpg" />
+        </FrameDiv>
+        <BigFrameDiv>
             <Image src="/static/gallery/5.jpg" />
             <InfoDiv>
                 <InfoHeaderH3>Vyšperkování do posledního detailu</InfoHeaderH3>
                 <p>
                     Umím udělat nejenom kytice pro nevěstu, ale i překrásné kytice družičkám, maminkám, korsáž ženichovi, svědkovi, včetně výzdoby svatební tabule, auta, oddávacího stolu a kytice na házení.
                     Podle vašeho přání mohu také vyrobit družičkám ozdobné květinové náramky.
-                    Také umím udělat překrásné výzdoby něvěstám, ale i družičkám do vlasů.    
-                </p>            
+                    Také umím udělat překrásné výzdoby něvěstám, ale i družičkám do vlasů.
+                </p>
                 <p>
                     Připravím Vám kompletní květinovou výzdobu objektu, kde se svatba koná (např. výzdoba lavic v kostele, oddávací bráná v zahradě apod.)
                     Zajistím výzdobu pro svatební hosty. Jedná se o svatební vývazky z Myrty nebo Buxusu a k nim přišpendlených mašliček.
                 </p>
             </InfoDiv>
+        </BigFrameDiv>
+        <FrameDiv>
+            <Image src="/static/gallery/4.jpg" />
         </FrameDiv>
-        <SmallFrameDiv>
-            <Image src="/static/gallery/4.jpg" />          
-        </SmallFrameDiv>   
-        <SmallFrameDiv>
+        <FrameDiv>
             <Image src="/static/gallery/3.jpg" />
             <InfoDiv>
                 <InfoHeaderH3>Obřad v Botanické zahradě</InfoHeaderH3>
-                Jako zaměstnanec Botanické zahrady a arboreta Mandelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady. 
-            </InfoDiv>              
-        </SmallFrameDiv>         
-        <ExtraSmallFrameDiv>
+                Jako zaměstnanec Botanické zahrady a arboreta Mandelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady.
+            </InfoDiv>
+        </FrameDiv>
+        <SmallFrameDiv>
             <Image src="/static/gallery/7.jpg" />
-        </ExtraSmallFrameDiv>      
-        <ExtraSmallFrameDiv>
+        </SmallFrameDiv>
+        <SmallFrameDiv>
             <Image src="/static/gallery/8.jpg" />
-        </ExtraSmallFrameDiv>   
-        <ExtraSmallFrameDiv>
+        </SmallFrameDiv>
+        <SmallFrameDiv>
             <Image src="/static/gallery/2.jpg" />
-        </ExtraSmallFrameDiv>
-        <ExtraSmallFrameDiv>
+        </SmallFrameDiv>
+        <SmallFrameDiv>
             <Image src="/static/gallery/1.jpg" />
-        </ExtraSmallFrameDiv>   
+        </SmallFrameDiv>
         <ContactNow />
     </>
 )

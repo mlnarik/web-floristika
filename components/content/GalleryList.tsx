@@ -35,18 +35,18 @@ const SmallImage = styled(Img)`
 
 export const GalleryList = () => (
     <>
-    <Image src="/static/gallery/7.jpg" />
-    <Image src="/static/gallery/8.jpg" />  
-    <SmallImage src="/static/gallery/9.jpg" />
-    <SmallImage src="/static/gallery/11.jpg" />
-    <SmallImage src="/static/gallery/3.jpg" />
-    <SmallImage src="/static/gallery/4.jpg" />
-    <Image src="/static/gallery/1.jpg" />
-    <Image src="/static/gallery/2.jpg" />
-    <SmallImage src="/static/gallery/10.jpg" /> 
-    <SmallImage src="/static/gallery/5.jpg" />    
-    <SmallImage src="/static/gallery/6.jpg" />
-    <SmallImage src="/static/gallery/12.jpg" />
-    <ContactNow />
+        <Image src="/static/gallery/7.jpg" />
+        <Image src="/static/gallery/8.jpg" />
+        <SmallImage src="/static/gallery/9.jpg" />
+        <SmallImage src="/static/gallery/11.jpg" />
+        <SmallImage src="/static/gallery/3.jpg" />
+        <SmallImage src="/static/gallery/4.jpg" />
+        <Image src="/static/gallery/1.jpg" />
+        <Image src="/static/gallery/2.jpg" />
+        <SmallImage src="/static/gallery/10.jpg" />
+        <SmallImage src="/static/gallery/5.jpg" />
+        <SmallImage src="/static/gallery/6.jpg" />
+        <SmallImage src="/static/gallery/12.jpg" />
+        <ContactNow />
     </>
 )

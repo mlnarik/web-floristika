@@ -5,7 +5,7 @@ import { Logo } from '../header/Logo';
 const ParallaxedImage = styled<'div', any>('div')`
     position: relative;
 
-    height: 60vh;
+    height: 50vh;
     padding-top: 5rem;
 
     text-align: middle;
@@ -18,7 +18,7 @@ const ParallaxedImage = styled<'div', any>('div')`
         left: 0;
         right: 0;
         height: 100vh;      
-        transform: translateY(150px) translateZ(-1px) scale(2.5);
+        transform: translateZ(-1px) scale(2);
 
         background: url(${props => props.url}) center no-repeat;
         background-size: cover;   

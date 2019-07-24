@@ -1,13 +1,8 @@
 import styled from '@emotion/styled';
-import Img from 'react-image'
 import { ContactNow } from './ContactNow';
+import { Img } from '../common/Img';
 
-const Image = styled(Img)`
-    display: inline-block;
-
-    border: 1px solid black;
-    border-radius: 4px;
-    width: 100%;`
+const Image = (props) => (<Img large {...props}/>)
 
 const BigFrameDiv = styled.div`
     flex: 0 0 100%;
@@ -132,7 +127,6 @@ export const ServicesList = () => (
         </SmallFrameDiv>
         <SmallFrameDiv>
             <Image src="/static/gallery/1.jpg" />
-        </SmallFrameDiv>
-        <ContactNow />
+        </SmallFrameDiv>        
     </>
 )

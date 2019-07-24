@@ -43,7 +43,7 @@ export const Contact = () => {
                             <option value='Jiné' />
                         </datalist>
                         <Form.TextArea label='Vaše přání' rows='15' placeholder='Popište prosím, co by jste si přáli' onChange={changeMessage} />
-                        <Button primary type='submit' onClick={submitForm}>Odeslat</Button>
+                        <Button fluid primary type='submit' onClick={submitForm}>Odeslat</Button>
                     </Grid.Column>
 
 

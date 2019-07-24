@@ -31,6 +31,7 @@ const BackgroundDiv = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    align-items: flex-start;
 
     width: 100vw;
     max-width: 1200px;

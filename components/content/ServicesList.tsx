@@ -86,7 +86,7 @@ export const ServicesList = () => (
             <InfoDiv>
             <InfoHeaderH3>Spokojenost je předností</InfoHeaderH3>
                 Mojí snahou je docílit vždy maximální spokojenosti zákazníka i s ohledem na příznivou cenu všech vazeb.
-                A to s láskou a citem pro detail a kopozici.
+                A to s láskou a citem pro detail a kompozici.
                 Vázání svatebních kytic představuje pro mne velikou radost a potěšení.                
 
             </InfoDiv>            
@@ -105,7 +105,7 @@ export const ServicesList = () => (
                 </p>
                 <p>
                     Připravím Vám kompletní květinovou výzdobu objektu, kde se svatba koná (např. výzdoba lavic v kostele, oddávací bráná v zahradě apod.)
-                    Zajistím výzdobu pro svatební hosty. Jedná se o svatební vývazky z Myrty nebo Buxusu a k nim přišpendlených mašliček.
+                    Zajistím výzdobu pro svatební hosty. Jedná se o svatební vývazky z myrty nebo buxusu a k nim přišpendlených mašliček.
                 </p>
             </InfoDiv>
         </BigFrameDiv>
@@ -113,7 +113,7 @@ export const ServicesList = () => (
             <Image src="/static/gallery/3.jpg" />
             <InfoDiv>
                 <InfoHeaderH3>Obřad v Botanické zahradě</InfoHeaderH3>
-                Jako zaměstnanec Botanické zahrady a arboreta Mandelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady.
+                Jako zaměstnanec Botanické zahrady a arboreta Mendelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady.
             </InfoDiv>
         </FrameDiv>        
         <FrameDiv>

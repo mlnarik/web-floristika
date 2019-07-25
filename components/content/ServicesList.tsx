@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { Img } from '../common/Img';
+import Link from 'next/link';
+import { Button } from 'semantic-ui-react';
 
 const Image = (props) => (<Img large {...props}/>)
 
@@ -128,6 +130,9 @@ export const ServicesList = () => (
         </SmallFrameDiv>
         <SmallFrameDiv>
             <Image src="/static/gallery/1.jpg" />
-        </SmallFrameDiv>        
-    </>
+        </SmallFrameDiv>      
+        <Link href="/galerie">
+            <Button fluid style={{margin: 0}} size='big'>Podívat se do galerie na více fotek</Button>
+        </Link>        
+    </> 
 )

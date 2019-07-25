@@ -7,7 +7,7 @@ import { ContactNow } from '../components/content/ContactNow';
 
 const App = () => (
     <main>          
-      <MainContent bgImgName='index'>
+      <MainContent bgImgName='contact'>
         <ServicesList />
         <Reviews />
         <ContactNow />

@@ -5,7 +5,7 @@ import { GalleryList } from '../components/content/GalleryList';
 
 const Galerie = () => (
     <main>          
-      <MainContent bgImgName='contact'>
+      <MainContent bgImgName='contact' cutTop>
         <GalleryList />
       </MainContent>
     </main>)

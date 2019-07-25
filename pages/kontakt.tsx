@@ -8,7 +8,7 @@ const Kontakt = () => {
 
     return (
         <main>
-            <MainContent bgImgName='contact'>
+            <MainContent bgImgName='contact' cutTop>
                 <Contact/>
             </MainContent>
         </main>

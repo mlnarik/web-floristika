@@ -5,7 +5,8 @@ import { Logo } from '../header/Logo';
 const ParallaxedImage = styled<'div', any>('div')`
     position: relative;
 
-    height: 50vh;
+    height: ${props => props.cutTop ? 'auto' : '50vh'};
+    min-height: 22rem;
     padding-top: 5rem;
 
     text-align: middle;
@@ -45,11 +46,10 @@ const BackgroundDiv = styled.div`
  
 
 export const MainContent = (props) => {
-
     const url = `/static/header/${props.bgImgName}.jpg`;
     return (
         <div>
-            <ParallaxedImage url={url}>
+            <ParallaxedImage url={url} cutTop={props.cutTop}>
                 <Logo />
             </ParallaxedImage>
             <BackgroundDiv>

@@ -15,8 +15,8 @@ const ParallaxedImage = styled<'div', any>('div')`
         position: fixed;
         content: "";
         top: 0;
-        left: 0;
-        right: 0;
+        left: -10px;
+        right: -10px;
         height: 100vh;      
         transform: translateZ(-1px) scale(2);
 

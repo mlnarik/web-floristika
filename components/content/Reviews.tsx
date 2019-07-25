@@ -8,17 +8,12 @@ const SectionDiv = styled.div`
 
 export const Reviews = () => (
     <SectionDiv>
-        <div>
-            <h3>Ohlasy od zákazníků</h3>
-            <p>
-                <i>"Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá spolupráce a výsledek nad odčekávání skvělý. DĚKUJI MIRKO!"</i> - <b>Iva Malá</b>
-            </p>
-            <p>
-                <i>"Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá spolupráce a výsledek nad odčekávání skvělý. DĚKUJI MIRKO! duplicate 2"</i> - <b>Iva Malá</b>
-            </p>
-            <p>
-                <i>"Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá spolupráce a výsledek nad odčekávání skvělý. DĚKUJI MIRKO! duplicate 3"</i> - <b>Iva Malá</b>
-            </p>
-        </div>
+        <h3>Ohlasy od zákazníků</h3>
+        <p>
+            <i>"Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá spolupráce a výsledek nad odčekávání skvělý. DĚKUJI MIRKO!"</i><br /> - <b>Iva Malá</b>
+        </p>
+        <p>
+            <i>"Super servis, čerstvé a krásné květiny na přání, Mirka se vcítila do našho přání a naše svatební výzdoba a kytice udělaly náš velký den tím nejkrásnějším."</i><br /> - <b>Olinka Šišková</b>
+        </p>
     </SectionDiv>
 )

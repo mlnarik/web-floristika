@@ -27,7 +27,7 @@ export const Contact = () => {
     return (
         <>
             Konzultace je zcela ZDARMA. Rádi Vám poradíme a prodiskutujeme Vaše představy.
-    <br />
+            <br />
             <br />
             <Form style={{ width: '100%' }}>
                 <Grid columns={2} stackable relaxed='very'>

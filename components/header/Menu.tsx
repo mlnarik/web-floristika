@@ -5,14 +5,20 @@ import styled from '@emotion/styled';
 const LinkA = styled.a`
     text-decoration: none;
     color: inherit;
+    width: 100%;
 `
 
 const MenuDiv = styled.ul`
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
 `
 
 const MenuItem = styled.li`
-    display: inline;
+    display: block;    
+    flex: 0 0 20%;
     margin: 0;
     padding: 0 3rem;    
     list-style-type: none;

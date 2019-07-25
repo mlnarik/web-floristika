@@ -4,8 +4,19 @@ import Head from 'next/head';
 import { Header } from '../components/header/Header';
 
 import '../styles/globalStyles.scss';
+import { Router } from 'next/dist/client/router';
 
 class MyApp extends App {
+
+  componentDidMount() {
+    Router.events.on('routeChangeComplete', () => { 
+      var element = document.querySelector('body');
+      if (element) {
+        element.scrollTop = 0; 
+      }
+    });
+  }
+
   render() {
     const { Component, pageProps } = this.props;
 

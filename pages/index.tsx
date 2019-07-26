@@ -6,12 +6,10 @@ import { Reviews } from '../components/content/Reviews';
 import { ContactNow } from '../components/content/ContactNow';
 
 const App = () => (
-    <main>          
-      <MainContent bgImgName='index'>
-        <ServicesList />
-        <Reviews />
-        <ContactNow />
-      </MainContent>
-    </main>)
+  <MainContent bgImgName='index'>
+    <ServicesList />
+    <Reviews />
+    <ContactNow />
+  </MainContent>)
 
 export default App;

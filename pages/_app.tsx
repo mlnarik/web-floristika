@@ -1,7 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import { Header } from '../components/header/Header';
+import { MenuNav } from '../components/header/MenuNav';
 
 import '../styles/globalStyles.scss';
 import { Router } from 'next/dist/client/router';
@@ -27,7 +27,7 @@ class MyApp extends App {
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="icon" type="image/png" href="/static/logo.png" />
         </Head>
-        <Header />
+        <MenuNav />
         <Component {...pageProps} />
       </Container>
     );

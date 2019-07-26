@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const LogoDiv = styled.div`
-    display: block;
-    flex: 0 0 auto;
-
-    //background-image: url('/static/logo2.png');
+const LogoHeader = styled.header`
+    text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     color: white;
 `
@@ -20,8 +17,8 @@ const PageSubLabel = styled.h2`
 `
 
 export const Logo = () => (
-    <LogoDiv>
+    <LogoHeader>
         <PageLabel>Svatební floristika<br />
         Miroslava Blatná</PageLabel>
         <PageSubLabel>Pro krásu ve Vašem životě</PageSubLabel>
-    </LogoDiv>)
+    </LogoHeader>)

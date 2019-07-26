@@ -9,9 +9,6 @@ const ParallaxedImage = styled<'div', any>('div')`
     min-height: 22rem;
     padding-top: 5rem;
 
-    text-align: middle;
-    margin: 0 auto;
-
     &::after {
         position: fixed;
         content: "";
@@ -26,9 +23,8 @@ const ParallaxedImage = styled<'div', any>('div')`
         background-position: 50%;
         z-index: -1;
     }
-
 `    
-const BackgroundDiv = styled.div`
+const BackgroundMain = styled.main`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -52,8 +48,8 @@ export const MainContent = (props) => {
             <ParallaxedImage url={url} cutTop={props.cutTop}>
                 <Logo />
             </ParallaxedImage>
-            <BackgroundDiv>
+            <BackgroundMain>
                 {props.children}
-            </BackgroundDiv>
+            </BackgroundMain>
         </div>);
 }

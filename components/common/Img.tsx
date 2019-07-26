@@ -9,6 +9,24 @@ const StyledImg = styled(LazyLoadingImg)`
     border-radius: 4px;
     width: 100%;`
 
+const ImageModal = styled.div`
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:before {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        opacity: .5;        
+    }
+    `    
+
 const LargeSizedDiv = styled.div`
     width: 100%;`
 
@@ -42,11 +60,8 @@ const CustomPlaceholder = styled(Placeholder)`
 export const Img = (props) => {
 
     const [size, setSize] = useState(props.small ? 'small' : props.large ? 'large' : 'normal');
+    const [modalVisible, showModal] = useState(false);
     const [isLoading, setLoadingStatus] = useState(true);
-
-    const enlargePicture = (e) => {
-        //setSize('large');
-    };
 
     const loadingFinished = () => setLoadingStatus(false);
 
@@ -63,10 +78,15 @@ export const Img = (props) => {
 
     return (
     <ImageFrame>
-        <StyledImg src={props.src} onClick={enlargePicture} onLoad={loadingFinished} />
+        <StyledImg src={props.src} onClick={() => showModal(true)} onLoad={loadingFinished} />
         {isLoading ? 
         <CustomPlaceholder>
             <Placeholder.Image square />
         </CustomPlaceholder> : <div />}
+        {modalVisible ? 
+        <ImageModal>
+            <StyledImg src={props.src} onClick={() => showModal(false)} />
+        </ImageModal> : <div />
+        }
     </ImageFrame>);
 }

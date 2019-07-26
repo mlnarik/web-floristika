@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const PrettyImage = styled(LazyLoadingImg)`
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 4px;`
 
 const LargeImage = styled(PrettyImage)`

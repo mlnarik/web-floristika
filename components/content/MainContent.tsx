@@ -5,7 +5,7 @@ import { Logo } from '../header/Logo';
 const ParallaxedImage = styled<'div', any>('div')`
     position: relative;
 
-    height: ${props => props.cutTop ? 'auto' : '50vh'};
+    height: ${props => props.cutTop ? 'auto' : '55vh'};
     min-height: 22rem;
     padding-top: 5rem;
 

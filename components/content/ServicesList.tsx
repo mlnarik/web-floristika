@@ -46,7 +46,7 @@ const InfoDiv = styled.div`
     top: 1%;
     width: 400px;
     padding: 0.75rem;
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     border-radius: 4px;
     opacity: .9;
     color: black;

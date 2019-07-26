@@ -7,7 +7,9 @@ const StyledImg = styled(LazyLoadingImg)`
     display: block;
     border: 1px solid white;
     border-radius: 4px;
-    width: 100%;`
+    width: 100%;
+    cursor: ${props => props.clickable === 'true' ? 'pointer': 'initial'};
+    `
 
 const ImageModal = styled.div`
     position: fixed;
@@ -15,6 +17,7 @@ const ImageModal = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
+    cursor: pointer;
 
     &:before {
         position: fixed;
@@ -63,7 +66,14 @@ export const Img = (props) => {
     const [modalVisible, showModal] = useState(false);
     const [isLoading, setLoadingStatus] = useState(true);
 
-    const loadingFinished = () => setLoadingStatus(false);
+    const loadingFinished = () => {
+        setLoadingStatus(false);
+    }
+    const showEnlargedImage = (visible) => {
+        if (props.previewable) {
+            showModal(visible);
+        }
+    }
 
     let ImageFrame;
 
@@ -78,14 +88,14 @@ export const Img = (props) => {
 
     return (
     <ImageFrame>
-        <StyledImg src={props.src} onClick={() => showModal(true)} onLoad={loadingFinished} />
+        <StyledImg src={props.src} onClick={() => showEnlargedImage(true)} onLoad={loadingFinished} clickable={props.previewable ? 'true' : 'false'} style={{ display: isLoading ? 'none' : 'inherit' }} />
         {isLoading ? 
         <CustomPlaceholder>
             <Placeholder.Image square />
         </CustomPlaceholder> : <div />}
         {modalVisible ? 
         <ImageModal>
-            <StyledImg src={props.src} onClick={() => showModal(false)} />
+            <StyledImg src={props.src} onClick={() => showEnlargedImage(false)}/>
         </ImageModal> : <div />
         }
     </ImageFrame>);

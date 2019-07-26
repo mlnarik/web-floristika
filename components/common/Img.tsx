@@ -1,23 +1,25 @@
 import LazyLoadingImg from 'react-image'
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { Placeholder } from 'semantic-ui-react';
 
-const PrettyImage = styled(LazyLoadingImg)`
-    display: inline-block;
+const StyledImg = styled(LazyLoadingImg)`
+    display: block;
     border: 1px solid white;
-    border-radius: 4px;`
-
-const LargeImage = styled(PrettyImage)`
+    border-radius: 4px;
     width: 100%;`
 
-const Image = styled(PrettyImage)`
+const LargeSizedDiv = styled.div`
+    width: 100%;`
+
+const MediumSizedDiv = styled.div`
     width: 50%;
 
     @media screen and (max-width: 1100px) {
         width: 100%;
     }    
     `
-const SmallImage = styled(PrettyImage)`
+const SmallSizedDiv = styled.div`
     width: 25%;
     height: 25%;
 
@@ -30,40 +32,41 @@ const SmallImage = styled(PrettyImage)`
     }       
     `
 
-// const Modal = styled.div`
-//     display: block;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-
-//     background-color: black;
-//     opacity: .6;
-//     z-index: 2;`
-
-// const ModalDialog = (props) => (
-//     <Modal>
-//         bla
-//     </Modal>
-// )
+const CustomPlaceholder = styled(Placeholder)`
+    width: 100%;
+    max-width: initial !important;
+    border: 1px solid white;
+    border-radius: 4px;
+`
 
 export const Img = (props) => {
 
     const [size, setSize] = useState(props.small ? 'small' : props.large ? 'large' : 'normal');
+    const [isLoading, setLoadingStatus] = useState(true);
 
     const enlargePicture = (e) => {
         //setSize('large');
     };
 
-    if (size === 'small') {
-        return <SmallImage src={props.src} onClick={enlargePicture} />;
-    } else if (size === 'large') {
-        return <LargeImage src={props.src} onClick={enlargePicture} />;
-    } else {
-        return (
-            <Image src={props.src} onClick={enlargePicture} />
-        );
-    }
-}
+    const loadingFinished = () => setLoadingStatus(false);
 
+    let ImageFrame;
+
+    if (size === 'small') {
+        ImageFrame = ({children}) => <SmallSizedDiv>{children}</SmallSizedDiv>;
+    } else if (size === 'large') {
+        ImageFrame = ({children}) => <LargeSizedDiv>{children}</LargeSizedDiv>;
+    } else {
+        ImageFrame = ({children}) => <MediumSizedDiv>{children}</MediumSizedDiv>;
+    }
+
+
+    return (
+    <ImageFrame>
+        <StyledImg src={props.src} onClick={enlargePicture} onLoad={loadingFinished} />
+        {isLoading ? 
+        <CustomPlaceholder>
+            <Placeholder.Image square />
+        </CustomPlaceholder> : <div />}
+    </ImageFrame>);
+}

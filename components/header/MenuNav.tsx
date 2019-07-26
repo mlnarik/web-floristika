@@ -8,7 +8,7 @@ const CenteredNav = styled.nav`
   height: 100%;`;
 
 const StickyDiv = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -42,6 +42,10 @@ const MenuDiv = styled.ul`
     justify-content: space-evenly;
     width: 100%;
     padding: 0;
+
+    @supports (display:-ms-grid) { 
+        justify-content: space-around;
+  } 
 `
 
 const MenuItem = styled.li`

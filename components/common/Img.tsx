@@ -62,7 +62,6 @@ const CustomPlaceholder = styled(Placeholder)`
 
 export const Img = (props) => {
 
-    const [size, setSize] = useState(props.small ? 'small' : props.large ? 'large' : 'normal');
     const [modalVisible, showModal] = useState(false);
     const [isLoading, setLoadingStatus] = useState(true);
 
@@ -77,9 +76,9 @@ export const Img = (props) => {
 
     let ImageFrame;
 
-    if (size === 'small') {
+    if (props.small) {
         ImageFrame = ({children}) => <SmallSizedDiv>{children}</SmallSizedDiv>;
-    } else if (size === 'large') {
+    } else if (props.large) {
         ImageFrame = ({children}) => <LargeSizedDiv>{children}</LargeSizedDiv>;
     } else {
         ImageFrame = ({children}) => <MediumSizedDiv>{children}</MediumSizedDiv>;

@@ -1,8 +1,16 @@
-//@import "~reset.css/reset.css";
-
 $font-url: 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
 $font-name: 'Roboto';
-@import '~semantic-ui-sass/semantic-ui';
+
+//@import '~semantic-ui-sass/semantic-ui';
+
+// Reduced set of semantic-ui styles for optimization
+@import '~semantic-ui-sass/scss/globals/all';
+@import '~semantic-ui-sass/scss/elements/button';
+@import '~semantic-ui-sass/scss/elements/input';
+@import '~semantic-ui-sass/scss/elements/divider';
+@import '~semantic-ui-sass/scss/elements/placeholder';
+@import '~semantic-ui-sass/scss/collections/form';
+@import '~semantic-ui-sass/scss/collections/grid';
 
 
 *, *::after, *::before {

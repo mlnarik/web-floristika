@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { Logo } from '../header/Logo';
+import { Img } from '../common/Img';
 
 const ParallaxedImage = styled<'div', any>('div')`
   position: relative;
@@ -61,16 +62,54 @@ const BackgroundMain = styled.main`
   }      
   `
 
+const ImageModal = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    * {
+      cursor: pointer;
+    }
+
+    &:before {
+        position: fixed;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        opacity: .8;    
+        z-index: -1;    
+        cursor: pointer;
+    }
+    `      
+
+export const ModalContext = React.createContext<any>(null);
 
 export const MainContent = (props) => {
+  const [modalState, setModalState] = useState({ isOpen: false, url: null });
+
   const url = `/static/header/${props.bgImgName}.jpg`;
   return (
-    <ParallaxContainer>
-      <ParallaxedImage url={url} cutTop={props.cutTop}>
-        <Logo />
-      </ParallaxedImage>
-      <BackgroundMain>
-        {props.children}
-      </BackgroundMain>
-    </ParallaxContainer>);
+    <ModalContext.Provider value={{ showModal: (url) => setModalState({ isOpen: true, url: url }) }}>
+      <ParallaxContainer>
+        <ParallaxedImage url={url} cutTop={props.cutTop}>
+          <Logo />
+        </ParallaxedImage>
+        <BackgroundMain>
+          {props.children}
+        </BackgroundMain>
+      </ParallaxContainer>
+      {modalState.isOpen ? 
+        <ImageModal onClick={() => setModalState({ isOpen: false, url: null})}>
+            <Img fit hideLoading src={modalState.url} onClick={() => setModalState({ isOpen: false, url: null})} />
+        </ImageModal> : <div />}      
+    </ModalContext.Provider>);
 }

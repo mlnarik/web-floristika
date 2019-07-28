@@ -1,7 +1,8 @@
 import LazyLoadingImg from 'react-image'
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Placeholder } from 'semantic-ui-react';
+import { ModalContext } from '../content/MainContent';
 
 const StyledImg = styled(LazyLoadingImg)`
     display: block;
@@ -11,24 +12,9 @@ const StyledImg = styled(LazyLoadingImg)`
     cursor: ${props => props.clickable === 'true' ? 'pointer': 'initial'};
     `
 
-const ImageModal = styled.div`
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    cursor: pointer;
-
-    &:before {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: white;
-        opacity: .5;        
-    }
-    `    
+const AutoSizedDiv = styled.div`
+    max-width: 100%;
+    max-height: 100%;`
 
 const LargeSizedDiv = styled.div`
     width: 100%;`
@@ -62,21 +48,24 @@ const CustomPlaceholder = styled(Placeholder)`
 
 export const Img = (props) => {
 
-    const [modalVisible, showModal] = useState(false);
-    const [isLoading, setLoadingStatus] = useState(true);
+    const [isLoading, setLoadingStatus] = useState(!props.hideLoading);
+
+    const modalContext = useContext(ModalContext);
 
     const loadingFinished = () => {
         setLoadingStatus(false);
     }
-    const showEnlargedImage = (visible) => {
+    const showEnlargedImage = () => {
         if (props.previewable) {
-            showModal(visible);
+            modalContext.showModal(props.src);
         }
     }
 
     let ImageFrame;
 
-    if (props.small) {
+    if (props.fit) {
+        ImageFrame = ({children}) => <AutoSizedDiv>{children}</AutoSizedDiv>;
+    } else if (props.small) {
         ImageFrame = ({children}) => <SmallSizedDiv>{children}</SmallSizedDiv>;
     } else if (props.large) {
         ImageFrame = ({children}) => <LargeSizedDiv>{children}</LargeSizedDiv>;
@@ -87,15 +76,10 @@ export const Img = (props) => {
 
     return (
     <ImageFrame>
-        <StyledImg src={props.src} onClick={() => showEnlargedImage(true)} onLoad={loadingFinished} clickable={props.previewable ? 'true' : 'false'} style={{ display: isLoading ? 'none' : 'inherit' }} />
+        <StyledImg src={props.src} onClick={() => showEnlargedImage()} onLoad={loadingFinished} clickable={props.previewable ? 'true' : 'false'} style={{ display: isLoading ? 'none' : 'inherit' }} />
         {isLoading ? 
         <CustomPlaceholder>
             <Placeholder.Image square />
         </CustomPlaceholder> : <div />}
-        {modalVisible ? 
-        <ImageModal>
-            <StyledImg src={props.src} onClick={() => showEnlargedImage(false)}/>
-        </ImageModal> : <div />
-        }
     </ImageFrame>);
 }

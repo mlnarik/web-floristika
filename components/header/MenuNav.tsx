@@ -21,17 +21,17 @@ const StickyDiv = styled.div`
     font-size: 1.3rem;
     font-weight: 600;
     z-index: 2;
-    opacity: .9;
+    opacity: 0.9;
 
     border-radius: 0 0 10px 10px;
     background-color: white;
-    `
+`;
 
 const LinkA = styled.a`
     text-decoration: none;
     color: inherit;
     width: 100%;
-    `
+`;
 
 const MenuDiv = styled.ul`
     display: flex;
@@ -40,10 +40,10 @@ const MenuDiv = styled.ul`
     width: 100%;
     padding: 0;
 
-    @supports (display:-ms-grid) {
+    @supports (display: -ms-grid) {
         justify-content: space-around;
     }
-    `
+`;
 
 const MenuItem = styled.li`
     display: block;
@@ -55,19 +55,26 @@ const MenuItem = styled.li`
     @media screen and (max-width: 600px) {
         padding: 0.75rem;
     }
-    `
+`;
 
 export const MenuNav = () => (
     <StickyDiv>
         <MenuDiv>
             <MenuItem>
-                <Link href="/"><LinkA href="">Služby</LinkA></Link>
+                <Link href="/">
+                    <LinkA href="">Služby</LinkA>
+                </Link>
             </MenuItem>
             <MenuItem>
-                <Link href="/galerie"><LinkA href="">Galerie</LinkA></Link>
+                <Link href="/galerie">
+                    <LinkA href="">Galerie</LinkA>
+                </Link>
             </MenuItem>
             <MenuItem>
-                <Link href="/kontakt"><LinkA href="">Kontakt</LinkA></Link>
+                <Link href="/kontakt">
+                    <LinkA href="">Kontakt</LinkA>
+                </Link>
             </MenuItem>
         </MenuDiv>
-    </StickyDiv>)
+    </StickyDiv>
+);

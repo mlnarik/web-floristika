@@ -1,25 +1,25 @@
-import LazyLoadingImg from 'react-image'
+import LazyLoadingImg from 'react-image';
 import styled from '@emotion/styled';
 import { useState, useContext } from 'react';
 import { Placeholder } from 'semantic-ui-react';
-import { ModalControlContext as ModalControlContext } from '../content/MainContent';
+import { ModalControlContext } from '../content/MainContent';
 
 const StyledImg = styled(LazyLoadingImg)`
     display: block;
     border: 1px solid white;
     border-radius: 4px;
     width: 100%;
-    cursor: ${props => props.clickable === 'true' ? 'pointer' : 'initial'};
-    `
+    cursor: ${props => (props.clickable === 'true' ? 'pointer' : 'initial')};
+`;
 
 const AutoSizedDiv = styled.div`
     max-width: 100%;
     max-height: 100%;
-    `
+`;
 
 const LargeSizedDiv = styled.div`
     width: 100%;
-    `
+`;
 
 const MediumSizedDiv = styled.div`
     width: 50%;
@@ -27,7 +27,7 @@ const MediumSizedDiv = styled.div`
     @media screen and (max-width: 1100px) {
         width: 100%;
     }
-    `
+`;
 
 const SmallSizedDiv = styled.div`
     width: 25%;
@@ -40,30 +40,38 @@ const SmallSizedDiv = styled.div`
     @media screen and (max-width: 650px) {
         width: 100%;
     }
-    `
+`;
 
 const ImageLoadingPlaceholder = styled(Placeholder)`
     width: 100%;
     max-width: initial !important;
     border: 1px solid white;
     border-radius: 4px;
-    `
+`;
 
-export const Img = (props) => {
-
+export const Img = (props: {
+    src: string;
+    hideLoading?: boolean;
+    fit?: boolean;
+    small?: boolean;
+    medium?: boolean;
+    large?: boolean;
+    previewable?: boolean;
+    onClick?: Function;
+}) => {
     const [isLoading, setLoadingStatus] = useState(!props.hideLoading);
 
     const modalControlContext = useContext(ModalControlContext);
 
     const loadingFinished = () => {
         setLoadingStatus(false);
-    }
+    };
 
     const showImagePreview = () => {
         if (props.previewable) {
             modalControlContext.showImagePreview(props.src);
         }
-    }
+    };
 
     let ImageFrame;
 
@@ -77,13 +85,22 @@ export const Img = (props) => {
         ImageFrame = MediumSizedDiv;
     }
 
-
     return (
         <ImageFrame>
-            <StyledImg src={props.src} onClick={() => showImagePreview()} onLoad={loadingFinished} clickable={props.previewable ? 'true' : 'false'} style={{ display: isLoading ? 'none' : 'inherit' }} />
-            {isLoading ?
+            <StyledImg
+                src={props.src}
+                onClick={() => showImagePreview()}
+                onLoad={loadingFinished}
+                clickable={props.previewable ? 'true' : 'false'}
+                style={{ display: isLoading ? 'none' : 'inherit' }}
+            />
+            {isLoading ? (
                 <ImageLoadingPlaceholder>
                     <Placeholder.Image square />
-                </ImageLoadingPlaceholder> : <div />}
-        </ImageFrame>);
-}
+                </ImageLoadingPlaceholder>
+            ) : (
+                <div />
+            )}
+        </ImageFrame>
+    );
+};

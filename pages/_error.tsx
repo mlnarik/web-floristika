@@ -6,18 +6,17 @@ const CenteredDiv = styled.div`
     align-items: center;
     justify-content: center;
     padding: 40vh 1rem 1rem 1rem;
-    `
+`;
 
 class Error extends React.Component {
+    public props: any;
 
-    props: any;
-
-    static getInitialProps({ res, err }) {
+    public static getInitialProps({ res, err }) {
         const statusCode = res ? res.statusCode : err ? err.statusCode : null;
         return { statusCode };
     }
 
-    render() {
+    public render() {
         return (
             <CenteredDiv>
                 {this.props.statusCode === 404

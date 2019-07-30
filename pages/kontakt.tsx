@@ -2,8 +2,9 @@ import { MainContent } from '../components/content/MainContent';
 import { ContactForm } from '../components/content/ContactForm';
 
 const Kontakt = () => (
-    <MainContent bgImgName='contact' cutTop>
+    <MainContent bgImgName="contact" cutTop>
         <ContactForm />
-    </MainContent>)
+    </MainContent>
+);
 
 export default Kontakt;

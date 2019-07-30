@@ -21,4 +21,4 @@ export const GalleryList = () => (
         <Img previewable small src="/static/gallery/16.jpg" />
         <ContactNow />
     </>
-)
+);

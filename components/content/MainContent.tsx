@@ -6,13 +6,13 @@ import { Img } from '../common/Img';
 const ParallaxedImage = styled<'div', any>('div')`
     position: relative;
 
-    height: ${props => props.cutTop ? 'auto' : '55vh'};
+    height: ${props => (props.cutTop ? 'auto' : '55vh')};
     min-height: 22rem;
     padding-top: 5rem;
 
     &::after {
         position: fixed;
-        content: "";
+        content: '';
         top: 0;
         left: -10px;
         right: -10px;
@@ -24,7 +24,7 @@ const ParallaxedImage = styled<'div', any>('div')`
         background-position: 50%;
         z-index: -1;
     }
-    `
+`;
 
 const ParallaxContainer = styled.div`
     height: 100vh;
@@ -35,11 +35,11 @@ const ParallaxContainer = styled.div`
     overflow-y: auto;
     perspective: 1px;
 
-    @supports (display:-ms-grid) {
+    @supports (display: -ms-grid) {
         transform-style: flat;
         perspective: 0px;
     }
-    `
+`;
 
 const BackgroundMain = styled.main`
     display: flex;
@@ -59,7 +59,7 @@ const BackgroundMain = styled.main`
     @media screen and (max-width: 650px) {
         padding: 1rem;
     }
-    `
+`;
 
 const ImageModal = styled.div`
     display: flex;
@@ -78,37 +78,55 @@ const ImageModal = styled.div`
 
     &:before {
         position: fixed;
-        content: "";
+        content: '';
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         background-color: white;
-        opacity: .8;
+        opacity: 0.8;
         z-index: -1;
         cursor: pointer;
     }
-    `
+`;
 
 export const ModalControlContext = React.createContext<any>(null);
 
-export const MainContent = (props) => {
-    const [modalState, setModalState] = useState({ isOpen: false, url: null });
+export const MainContent = (props: {
+    cutTop?: boolean;
+    bgImgName: string;
+    children: any;
+}) => {
+    const [modalState, setModalState] = useState({ isOpen: false, url: '' });
 
     const url = `/static/header/${props.bgImgName}.jpg`;
     return (
-        <ModalControlContext.Provider value={{ showImagePreview: (url) => setModalState({ isOpen: true, url: url }) }}>
+        <ModalControlContext.Provider
+            value={{
+                showImagePreview: url =>
+                    setModalState({ isOpen: true, url: url })
+            }}>
             <ParallaxContainer>
                 <ParallaxedImage url={url} cutTop={props.cutTop}>
                     <Logo />
                 </ParallaxedImage>
-                <BackgroundMain>
-                    {props.children}
-                </BackgroundMain>
+                <BackgroundMain>{props.children}</BackgroundMain>
             </ParallaxContainer>
-            {modalState.isOpen ?
-                <ImageModal onClick={() => setModalState({ isOpen: false, url: null })}>
-                    <Img fit hideLoading src={modalState.url} onClick={() => setModalState({ isOpen: false, url: null })} />
-                </ImageModal> : <div />}
-        </ModalControlContext.Provider>);
-}
+            {modalState.isOpen ? (
+                <ImageModal
+                    onClick={() => setModalState({ isOpen: false, url: '' })}>
+                    <Img
+                        fit
+                        hideLoading
+                        src={modalState.url}
+                        onClick={() =>
+                            setModalState({ isOpen: false, url: '' })
+                        }
+                    />
+                </ImageModal>
+            ) : (
+                <div />
+            )}
+        </ModalControlContext.Provider>
+    );
+};

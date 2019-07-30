@@ -4,8 +4,9 @@ import { MainContent } from '../components/content/MainContent';
 import { GalleryList } from '../components/content/GalleryList';
 
 const Galerie = () => (
-    <MainContent bgImgName='contact' cutTop>
+    <MainContent bgImgName="contact" cutTop>
         <GalleryList />
-    </MainContent>)
+    </MainContent>
+);
 
 export default Galerie;

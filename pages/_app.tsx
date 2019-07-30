@@ -7,8 +7,7 @@ import '../styles/globalStyles.scss';
 import { Router } from 'next/dist/client/router';
 
 class MyApp extends App {
-
-    componentDidMount() {
+    public componentDidMount() {
         Router.events.on('routeChangeComplete', () => {
             var element = document.querySelector('body');
             if (element) {
@@ -17,14 +16,17 @@ class MyApp extends App {
         });
     }
 
-    render() {
+    public render() {
         const { Component, pageProps } = this.props;
 
         return (
             <Container>
                 <Head>
                     <title>Svatební floristika - Miroslava Blatná</title>
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0"
+                    />
                     <link rel="icon" type="image/png" href="/static/logo.png" />
                 </Head>
                 <MenuNav />

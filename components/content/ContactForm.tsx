@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Divider, Grid, Form } from 'semantic-ui-react'
 
-export const Contact = () => {
+export const ContactForm = () => {
     const [state, setState] = useState({
         fullName: '',
         emailAddress: '',
@@ -22,6 +22,7 @@ export const Contact = () => {
             Číslo: ${state.phoneNumber}
             Účel: ${state.purpose}
             Zpráva: ${state.message}`
+        //TODO: sending an email
     }
 
     return (

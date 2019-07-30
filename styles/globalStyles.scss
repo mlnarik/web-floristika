@@ -13,37 +13,39 @@ $font-name: 'Roboto';
 @import '~semantic-ui-sass/scss/collections/grid';
 
 
-*, *::after, *::before {
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 html {
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  min-width: 300px;  
-  overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    min-width: 300px;
+    overflow: hidden;
 
-  margin: 0;
-  background-color: white;
-  font-family: $font-family;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.1rem;
+    margin: 0;
+    background-color: white;
+    font-family: $font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.1rem;
 
 }
 
-p + p {
-  padding-top: 1rem;
+p+p {
+    padding-top: 1rem;
 }
 
 main {
-  text-align: center; 
-  margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
 }

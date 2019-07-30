@@ -1,10 +1,9 @@
 import { MainContent } from '../components/content/MainContent';
-import { Contact } from '../components/content/Contact';
+import { ContactForm } from '../components/content/ContactForm';
 
 const Kontakt = () => (
-  <MainContent bgImgName='contact' cutTop>
-    <Contact />
-  </MainContent>
-)
+    <MainContent bgImgName='contact' cutTop>
+        <ContactForm />
+    </MainContent>)
 
 export default Kontakt;

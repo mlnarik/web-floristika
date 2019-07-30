@@ -2,30 +2,33 @@ import LazyLoadingImg from 'react-image'
 import styled from '@emotion/styled';
 import { useState, useContext } from 'react';
 import { Placeholder } from 'semantic-ui-react';
-import { ModalContext } from '../content/MainContent';
+import { ModalControlContext as ModalControlContext } from '../content/MainContent';
 
 const StyledImg = styled(LazyLoadingImg)`
     display: block;
     border: 1px solid white;
     border-radius: 4px;
     width: 100%;
-    cursor: ${props => props.clickable === 'true' ? 'pointer': 'initial'};
+    cursor: ${props => props.clickable === 'true' ? 'pointer' : 'initial'};
     `
 
 const AutoSizedDiv = styled.div`
     max-width: 100%;
-    max-height: 100%;`
+    max-height: 100%;
+    `
 
 const LargeSizedDiv = styled.div`
-    width: 100%;`
+    width: 100%;
+    `
 
 const MediumSizedDiv = styled.div`
     width: 50%;
 
     @media screen and (max-width: 1100px) {
         width: 100%;
-    }    
+    }
     `
+
 const SmallSizedDiv = styled.div`
     width: 25%;
     height: 25%;
@@ -36,50 +39,51 @@ const SmallSizedDiv = styled.div`
 
     @media screen and (max-width: 650px) {
         width: 100%;
-    }       
+    }
     `
 
-const CustomPlaceholder = styled(Placeholder)`
+const ImageLoadingPlaceholder = styled(Placeholder)`
     width: 100%;
     max-width: initial !important;
     border: 1px solid white;
     border-radius: 4px;
-`
+    `
 
 export const Img = (props) => {
 
     const [isLoading, setLoadingStatus] = useState(!props.hideLoading);
 
-    const modalContext = useContext(ModalContext);
+    const modalControlContext = useContext(ModalControlContext);
 
     const loadingFinished = () => {
         setLoadingStatus(false);
     }
-    const showEnlargedImage = () => {
+
+    const showImagePreview = () => {
         if (props.previewable) {
-            modalContext.showModal(props.src);
+            modalControlContext.showImagePreview(props.src);
         }
     }
 
     let ImageFrame;
 
     if (props.fit) {
-        ImageFrame = ({children}) => <AutoSizedDiv>{children}</AutoSizedDiv>;
+        ImageFrame = AutoSizedDiv;
     } else if (props.small) {
-        ImageFrame = ({children}) => <SmallSizedDiv>{children}</SmallSizedDiv>;
+        ImageFrame = SmallSizedDiv;
     } else if (props.large) {
-        ImageFrame = ({children}) => <LargeSizedDiv>{children}</LargeSizedDiv>;
+        ImageFrame = LargeSizedDiv;
     } else {
-        ImageFrame = ({children}) => <MediumSizedDiv>{children}</MediumSizedDiv>;
+        ImageFrame = MediumSizedDiv;
     }
 
 
     return (
-    <ImageFrame>
-        <StyledImg src={props.src} onClick={() => showEnlargedImage()} onLoad={loadingFinished} clickable={props.previewable ? 'true' : 'false'} style={{ display: isLoading ? 'none' : 'inherit' }} />
-        {isLoading ? 
-        <CustomPlaceholder>
-            <Placeholder.Image square />
-        </CustomPlaceholder> : <div />}
-    </ImageFrame>);
+        <ImageFrame>
+            <StyledImg src={props.src} onClick={() => showImagePreview()} onLoad={loadingFinished} clickable={props.previewable ? 'true' : 'false'} style={{ display: isLoading ? 'none' : 'inherit' }} />
+            {isLoading ?
+                <ImageLoadingPlaceholder>
+                    <Placeholder.Image square />
+                </ImageLoadingPlaceholder> : <div />}
+        </ImageFrame>);
 }

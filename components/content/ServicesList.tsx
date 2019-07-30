@@ -3,39 +3,31 @@ import { Img } from '../common/Img';
 import Link from 'next/link';
 import { Button } from 'semantic-ui-react';
 
-const Image = (props) => (<Img large {...props}/>)
+const Image = (props) => (<Img large {...props} />)
 
 const BigFrameDiv = styled.div`
     flex: 0 0 100%;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
     `
 
 const FrameDiv = styled.div`
     flex: 0 0 50%;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
+
     @media screen and (max-width: 1100px) {
-        position: static;
         flex: 0 0 100%;
-    }    
+    }
     `
 
 const SmallFrameDiv = styled.div`
     flex: 0 0 25%;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    
+
     @media screen and (max-width: 1100px) {
-        position: static;
         flex: 0 0 50%;
     }
 
     @media screen and (max-width: 650px) {
-        position: static;
         flex: 0 0 100%;
     }
     `
@@ -50,8 +42,8 @@ const InfoDiv = styled.div`
     border-radius: 4px;
     opacity: .9;
     color: black;
-    background-color: white;  
-    z-index: 1;  
+    background-color: white;
+    z-index: 1;
     text-align: left;
 
     @media screen and (max-width: 1100px) {
@@ -63,7 +55,7 @@ const InfoDiv = styled.div`
 const InfoHeaderH3 = styled.h3`
     font-weight: 600;
     padding-bottom: 0.5rem;
-`
+    `
 
 export const ServicesList = () => (
     <>
@@ -73,7 +65,7 @@ export const ServicesList = () => (
         <FrameDiv>
             <Image src="/static/index/02.jpg" />
             <InfoDiv>
-            <InfoHeaderH3>Osobitý přístup</InfoHeaderH3>
+                <InfoHeaderH3>Osobitý přístup</InfoHeaderH3>
                 Floristikou se zabývám už několik let a je mou velkou zálibou a koníčkem.
                 Specializuji se na svatební kytice a svatební květinovou výzdobu.
                 Vše z čerstvě nařezaných a z Holandska dovezených květin.
@@ -83,11 +75,11 @@ export const ServicesList = () => (
         <FrameDiv>
             <Image src="/static/index/03.jpg" />
             <InfoDiv>
-            <InfoHeaderH3>Spokojenost je předností</InfoHeaderH3>
+                <InfoHeaderH3>Spokojenost je předností</InfoHeaderH3>
                 Mojí snahou je docílit vždy maximální spokojenosti zákazníka i s ohledem na příznivou cenu všech vazeb.
                 A to s láskou a citem pro detail a kompozici.
-                Vázání svatebních kytic představuje pro mne velikou radost a potěšení.                
-            </InfoDiv>            
+                Vázání svatebních kytic představuje pro mne velikou radost a potěšení.
+            </InfoDiv>
         </FrameDiv>
         <FrameDiv>
             <Image src="/static/index/04.jpg" />
@@ -113,7 +105,7 @@ export const ServicesList = () => (
                 <InfoHeaderH3>Obřad v Botanické zahradě</InfoHeaderH3>
                 Jako zaměstnanec Botanické zahrady a arboreta Mendelovy univerzity v Brně, jsem Vám schopna zajistit svatební obřad v krásném prostředí botanické zahrady.
             </InfoDiv>
-        </FrameDiv>        
+        </FrameDiv>
         <FrameDiv>
             <Image src="/static/index/07.jpg" />
         </FrameDiv>
@@ -128,9 +120,9 @@ export const ServicesList = () => (
         </SmallFrameDiv>
         <SmallFrameDiv>
             <Image src="/static/index/11.jpg" />
-        </SmallFrameDiv>      
+        </SmallFrameDiv>
         <Link href="/galerie">
-            <Button fluid style={{margin: 0}} size='big'>Podívat se do galerie na více fotek</Button>
-        </Link>        
-    </> 
+            <Button fluid style={{ margin: 0 }} size='big'>Podívat se do galerie na více fotek</Button>
+        </Link>
+    </>
 )

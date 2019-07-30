@@ -112,7 +112,7 @@ export const MainContent = (props: {
                 </ParallaxedImage>
                 <BackgroundMain>{props.children}</BackgroundMain>
             </ParallaxContainer>
-            {modalState.isOpen ? (
+            {modalState.isOpen && (
                 <ImageModal
                     onClick={() => setModalState({ isOpen: false, url: '' })}>
                     <Img
@@ -124,8 +124,6 @@ export const MainContent = (props: {
                         }
                     />
                 </ImageModal>
-            ) : (
-                <div />
             )}
         </ModalControlContext.Provider>
     );

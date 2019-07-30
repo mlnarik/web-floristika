@@ -9,7 +9,6 @@ const StyledImg = styled(LazyLoadingImg)`
     border: 1px solid white;
     border-radius: 4px;
     width: 100%;
-    cursor: ${props => (props.clickable === 'true' ? 'pointer' : 'initial')};
 `;
 
 const AutoSizedDiv = styled.div`
@@ -91,15 +90,15 @@ export const Img = (props: {
                 src={props.src}
                 onClick={() => showImagePreview()}
                 onLoad={loadingFinished}
-                clickable={props.previewable ? 'true' : 'false'}
-                style={{ display: isLoading ? 'none' : 'inherit' }}
+                style={{
+                    display: isLoading ? 'none' : null,
+                    cursor: props.previewable ? 'pointer' : null
+                }}
             />
-            {isLoading ? (
+            {isLoading && (
                 <ImageLoadingPlaceholder>
                     <Placeholder.Image square />
                 </ImageLoadingPlaceholder>
-            ) : (
-                <div />
             )}
         </ImageFrame>
     );

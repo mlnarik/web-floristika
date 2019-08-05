@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Button } from 'semantic-ui-react';
 
 const LogoHeader = styled.header`
     text-align: center;
@@ -17,7 +18,11 @@ const PageSubLabel = styled.h2`
     font-size: 2rem;
 `;
 
-export const Logo = () => (
+const ContactDiv = styled.div`
+    padding-top: 10rem;
+`;
+
+export const Logo = ({ showContactButton }: { showContactButton: boolean }) => (
     <LogoHeader>
         <PageLabel>
             Svatební floristika
@@ -25,5 +30,12 @@ export const Logo = () => (
             Miroslava Blatná
         </PageLabel>
         <PageSubLabel>Pro krásu ve Vašem životě</PageSubLabel>
+        {showContactButton && (
+            <ContactDiv>
+                <Button primary size="big">
+                    Kontaktovat zdarma
+                </Button>
+            </ContactDiv>
+        )}
     </LogoHeader>
 );

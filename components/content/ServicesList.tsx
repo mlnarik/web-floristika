@@ -53,7 +53,6 @@ const InfoDiv = styled.div`
 `;
 
 const InfoHeaderH3 = styled.h3`
-    font-weight: 600;
     padding-bottom: 0.5rem;
 `;
 

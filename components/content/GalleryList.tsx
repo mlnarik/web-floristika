@@ -1,4 +1,3 @@
-import { ContactNow } from './ContactNow';
 import { Img } from '../common/Img';
 
 export const GalleryList = () => (
@@ -19,6 +18,5 @@ export const GalleryList = () => (
         <Img previewable small src="/static/gallery/14.jpg" />
         <Img previewable small src="/static/gallery/15.jpg" />
         <Img previewable small src="/static/gallery/16.jpg" />
-        <ContactNow />
     </>
 );

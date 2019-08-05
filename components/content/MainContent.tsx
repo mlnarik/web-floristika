@@ -108,7 +108,7 @@ export const MainContent = (props: {
             }}>
             <ParallaxContainer>
                 <ParallaxedImage url={url} cutTop={props.cutTop}>
-                    <Logo showContactButton={!props.cutTop} />
+                    <Logo showContactButton={false} />
                 </ParallaxedImage>
                 <BackgroundMain>{props.children}</BackgroundMain>
             </ParallaxContainer>

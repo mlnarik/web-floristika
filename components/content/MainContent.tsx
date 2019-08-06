@@ -41,7 +41,7 @@ const ParallaxContainer = styled.div`
     }
 `;
 
-const BackgroundMain = styled.main`
+const PageContentMain = styled.main`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -110,7 +110,7 @@ export const MainContent = (props: {
                 <ParallaxedImage url={url} cutTop={props.cutTop}>
                     <Logo showContactButton={false} />
                 </ParallaxedImage>
-                <BackgroundMain>{props.children}</BackgroundMain>
+                <PageContentMain>{props.children}</PageContentMain>
             </ParallaxContainer>
             {modalState.isOpen && (
                 <ImageModal

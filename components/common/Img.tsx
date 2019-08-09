@@ -1,8 +1,9 @@
 import LazyLoadingImg from 'react-image';
 import styled from '@emotion/styled';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Placeholder } from 'semantic-ui-react';
-import { ModalControlContext } from '../content/MainContent';
+import { openModal } from '../../actions';
+import { useDispatch } from 'react-redux';
 
 const StyledImg = styled(LazyLoadingImg)`
     display: block;
@@ -59,8 +60,7 @@ export const Img = (props: {
     onClick?: Function;
 }) => {
     const [isLoading, setLoadingStatus] = useState(!props.hideLoading);
-
-    const modalControlContext = useContext(ModalControlContext);
+    const dispatch = useDispatch();
 
     const loadingFinished = () => {
         setLoadingStatus(false);
@@ -68,7 +68,7 @@ export const Img = (props: {
 
     const showImagePreview = () => {
         if (props.previewable) {
-            modalControlContext.showImagePreview(props.src);
+            dispatch(openModal(props.src));
         }
     };
 

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { Logo } from '../header/Logo';
 import { Img } from '../common/Img';
+import { useSelector, useDispatch } from 'react-redux';
+import { closeModal } from '../../actions';
 
 const ParallaxedImage = styled<'div', any>('div')`
     position: relative;
@@ -90,41 +92,33 @@ const ImageModal = styled.div`
     }
 `;
 
-export const ModalControlContext = React.createContext<any>(null);
-
 export const MainContent = (props: {
     cutTop?: boolean;
     bgImgName: string;
     children: any;
 }) => {
-    const [modalState, setModalState] = useState({ isOpen: false, url: '' });
+    const modalState = useSelector(state => state);
+    const dispatch = useDispatch();
 
     const url = `/static/header/${props.bgImgName}.jpg`;
     return (
-        <ModalControlContext.Provider
-            value={{
-                showImagePreview: url =>
-                    setModalState({ isOpen: true, url: url })
-            }}>
+        <>
             <ParallaxContainer>
                 <ParallaxedImage url={url} cutTop={props.cutTop}>
                     <Logo showContactButton={false} />
                 </ParallaxedImage>
                 <PageContentMain>{props.children}</PageContentMain>
             </ParallaxContainer>
-            {modalState.isOpen && (
-                <ImageModal
-                    onClick={() => setModalState({ isOpen: false, url: '' })}>
+            {modalState.isModalOpen && (
+                <ImageModal onClick={() => dispatch(closeModal())}>
                     <Img
                         fit
                         hideLoading
                         src={modalState.url}
-                        onClick={() =>
-                            setModalState({ isOpen: false, url: '' })
-                        }
+                        onClick={() => dispatch(closeModal())}
                     />
                 </ImageModal>
             )}
-        </ModalControlContext.Provider>
+        </>
     );
 };

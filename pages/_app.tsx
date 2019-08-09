@@ -2,9 +2,10 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import { MenuNav } from '../components/header/MenuNav';
-
-import '../styles/globalStyles.scss';
+import { Provider } from 'react-redux';
 import { Router } from 'next/dist/client/router';
+import { store } from '../store';
+import '../styles/globalStyles.scss';
 
 class MyApp extends App {
     public componentDidMount() {
@@ -30,7 +31,9 @@ class MyApp extends App {
                     <link rel="icon" type="image/png" href="/static/logo.png" />
                 </Head>
                 <MenuNav />
-                <Component {...pageProps} />
+                <Provider store={store}>
+                    <Component {...pageProps} />
+                </Provider>
             </Container>
         );
     }

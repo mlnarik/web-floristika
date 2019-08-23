@@ -48,6 +48,18 @@ const ImageLoadingPlaceholder = styled(Placeholder)`
     border-radius: 4px;
 `;
 
+const withSizedImg = ({ fit, small, large }) => {
+    if (fit) {
+        return AutoSizedDiv;
+    } else if (small) {
+        return SmallSizedDiv;
+    } else if (large) {
+        return LargeSizedDiv;
+    } else {
+        return MediumSizedDiv;
+    }
+};
+
 export const Img = (props: {
     src: string;
     hideLoading?: boolean;
@@ -72,17 +84,7 @@ export const Img = (props: {
         }
     };
 
-    let ImageFrame;
-
-    if (props.fit) {
-        ImageFrame = AutoSizedDiv;
-    } else if (props.small) {
-        ImageFrame = SmallSizedDiv;
-    } else if (props.large) {
-        ImageFrame = LargeSizedDiv;
-    } else {
-        ImageFrame = MediumSizedDiv;
-    }
+    const ImageFrame = withSizedImg(props as any);
 
     return (
         <ImageFrame>

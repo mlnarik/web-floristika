@@ -90,7 +90,7 @@ export const Img = (props: {
         <ImageFrame>
             <StyledImg
                 src={props.src}
-                onClick={() => showImagePreview()}
+                onClick={showImagePreview}
                 onLoad={loadingFinished}
                 style={{
                     display: isLoading ? 'none' : null,

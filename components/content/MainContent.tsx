@@ -99,12 +99,19 @@ export const MainContent = (props: {
 }) => {
     const [modalState, setModalState] = useState({ isOpen: false, url: '' });
 
+    const closeModal = () => {
+        setModalState({ isOpen: false, url: '' });
+    };
+
+    const openModal = url => {
+        setModalState({ isOpen: true, url: url });
+    };
+
     const url = `/static/header/${props.bgImgName}.jpg`;
     return (
         <ModalControlContext.Provider
             value={{
-                showImagePreview: url =>
-                    setModalState({ isOpen: true, url: url })
+                showImagePreview: openModal
             }}>
             <ParallaxContainer>
                 <ParallaxedImage url={url} cutTop={props.cutTop}>
@@ -113,15 +120,12 @@ export const MainContent = (props: {
                 <PageContentMain>{props.children}</PageContentMain>
             </ParallaxContainer>
             {modalState.isOpen && (
-                <ImageModal
-                    onClick={() => setModalState({ isOpen: false, url: '' })}>
+                <ImageModal onClick={closeModal}>
                     <Img
                         fit
                         hideLoading
                         src={modalState.url}
-                        onClick={() =>
-                            setModalState({ isOpen: false, url: '' })
-                        }
+                        onClick={closeModal}
                     />
                 </ImageModal>
             )}

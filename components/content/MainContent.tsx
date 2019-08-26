@@ -100,6 +100,8 @@ export const MainContent = (props: {
     const modalState = useSelector(state => state);
     const dispatch = useDispatch();
 
+    const dispatchCloseModal = () => dispatch(closeModal());
+
     const url = `/static/header/${props.bgImgName}.jpg`;
     return (
         <>
@@ -110,12 +112,12 @@ export const MainContent = (props: {
                 <PageContentMain>{props.children}</PageContentMain>
             </ParallaxContainer>
             {modalState.isModalOpen && (
-                <ImageModal onClick={() => dispatch(closeModal())}>
+                <ImageModal onClick={dispatchCloseModal}>
                     <Img
                         fit
                         hideLoading
                         src={modalState.url}
-                        onClick={() => dispatch(closeModal())}
+                        onClick={dispatchCloseModal}
                     />
                 </ImageModal>
             )}

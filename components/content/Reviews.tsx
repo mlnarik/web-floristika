@@ -28,5 +28,17 @@ export const Reviews = () => (
             </i>
             <br /> - <b>Olinka Šišková</b>
         </p>
+        <p>
+            <i>
+                &#8222;Slečna Blatná je velmi šikovná a talentovaná floristka.
+                Ochotná se na čemkoliv domluvit. Vždy vyjde vstříc a dobře
+                poradí. Zakázky zvládá v požadovaném termínu a nikdy nezklame.
+                Ceny jsou více než příznivé. Byla jsem s její prací velmi
+                spokojená i s jejím přátelsky lidským přístupem, který náladu
+                vždy uvolní. Moc doporučuji! Určitě se těším na další vazby od
+                této talentované dámy.&#8220;
+            </i>
+            <br /> - <b>Andrea Janceková</b>
+        </p>
     </SectionDiv>
 );

@@ -40,5 +40,17 @@ export const Reviews = () => (
             </i>
             <br /> - <b>Andrea Janceková</b>
         </p>
+        <p>
+            <i>
+                &#8222;Chtěla bych moc poděkovat paní Blatné za nádhernou
+                květinovou výzdobu na naší svatbě. Za její profesionalitu a
+                vstřícnost. Ještě teď se mě známí ptají, kdo nám květiny vázal a
+                aranžoval. Vše bylo dle domluvy včas nachystáno a výsledek
+                předčil moje představy. Paní Mirka je velmi šikovná a navíc
+                ochotná, na jakoukoliv akci, kde je potřeba květinová výzdoba ji
+                mohu jen doporučit.&#8220;
+            </i>
+            <br /> - <b>Alena Kolínková</b>
+        </p>
     </SectionDiv>
 );

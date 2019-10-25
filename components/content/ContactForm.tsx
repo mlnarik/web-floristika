@@ -1,6 +1,25 @@
 import { useState } from 'react';
 import { Button, Divider, Grid, Form, Message } from 'semantic-ui-react';
 
+const MAILER_URL = 'https://mailsender.mlnarik.now.sh/api/sendmail';
+
+function sendEmail(emailAddress: string, message: string): Promise<any> {
+    const data = {
+        subject: 'Nová poptávka z webu',
+        sender: emailAddress,
+        receiver: 'mgrmlnarik@gmail.com',
+        message: message
+    };
+    return fetch(MAILER_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+}
+
 export const ContactForm = () => {
     const [formInputs, setFormInputs] = useState({
         fullName: '',
@@ -85,16 +104,25 @@ export const ContactForm = () => {
 
     const submitForm = e => {
         if (!validateForm()) {
-            const emailText = `Jméno: ${formInputs.fullName}
-            Email: ${formInputs.emailAddress}
-            Číslo: ${formInputs.phoneNumber}
-            Účel: ${formInputs.purpose}
-            Zpráva: ${formInputs.message}`;
-            //TODO: sending an email
+            const emailText =
+                'Jméno: ' +
+                formInputs.fullName +
+                '\nEmail: ' +
+                formInputs.emailAddress +
+                '\nČíslo: ' +
+                formInputs.phoneNumber +
+                '\nÚčel: ' +
+                formInputs.purpose +
+                '\nZpráva: ' +
+                formInputs.message;
 
-            setFormInputs({ ...formInputs, sent: true, error: false });
-        } else {
-            setFormInputs({ ...formInputs, sent: false, error: true });
+            sendEmail(formInputs.emailAddress, emailText)
+                .then(() => {
+                    setFormInputs({ ...formInputs, sent: true, error: false });
+                })
+                .catch(() => {
+                    setFormInputs({ ...formInputs, sent: false, error: true });
+                });
         }
     };
 
@@ -121,8 +149,8 @@ export const ContactForm = () => {
 
                         <Message
                             error
-                            header="Vyplněné údaje nejsou správné"
-                            content="Prosím pečlivě zkontrolujte údaje před odesláním"
+                            header="Poptávka nebyla odeslána"
+                            content="Došlo k technické chybě. Prosím napiště na mirkablatna@centrum.cz nebo zavolejte. Děkujeme"
                         />
 
                         <Form.Input

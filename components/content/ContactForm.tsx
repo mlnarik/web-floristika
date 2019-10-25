@@ -7,7 +7,7 @@ function sendEmail(emailAddress: string, message: string): Promise<any> {
     const data = {
         subject: 'Nová poptávka z webu',
         sender: emailAddress,
-        receiver: 'mgrmlnarik@gmail.com',
+        receiver: 'mirkablatna@centrum.cz',
         message: message
     };
     return fetch(MAILER_URL, {

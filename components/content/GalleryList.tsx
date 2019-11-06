@@ -18,5 +18,13 @@ export const GalleryList = () => (
         <Img previewable small src="/static/gallery/14.jpg" />
         <Img previewable small src="/static/gallery/15.jpg" />
         <Img previewable small src="/static/gallery/16.jpg" />
+        <Img previewable small src="/static/gallery/17.jpg" />
+        <Img previewable small src="/static/gallery/18.jpg" />
+        <Img previewable small src="/static/gallery/19.jpg" />
+        <Img previewable small src="/static/gallery/20.jpg" />
+        <Img previewable small src="/static/gallery/21.jpg" />
+        <Img previewable small src="/static/gallery/22.jpg" />
+        <Img previewable small src="/static/gallery/23.jpg" />
+        <Img previewable small src="/static/gallery/24.jpg" />
     </>
 );

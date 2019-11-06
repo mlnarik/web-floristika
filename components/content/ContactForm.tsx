@@ -144,13 +144,13 @@ export const ContactForm = () => {
                         <Message
                             success
                             header="Poptávka odeslána"
-                            content="Zpráva nám byla úspešně odeslána! Vyčkejte prosím na odpověď"
+                            content="Zpráva nám byla úspěšně odeslána! Vyčkejte prosím na odpověď"
                         />
 
                         <Message
                             error
                             header="Poptávka nebyla odeslána"
-                            content="Došlo k technické chybě. Prosím napiště na mirkablatna@centrum.cz nebo zavolejte. Děkujeme"
+                            content="Došlo k technické chybě. Prosím napište na mirkablatna@centrum.cz nebo zavolejte. Děkujeme"
                         />
 
                         <Form.Input
@@ -168,8 +168,8 @@ export const ContactForm = () => {
                             onChange={changeEmailAddress}
                         />
                         <Form.Input
-                            label="Telefoní číslo"
-                            placeholder="Vložte prosím telefoní číslo"
+                            label="Telefonní číslo"
+                            placeholder="Vložte prosím telefonní číslo"
                             error={formErrors.phoneNumber}
                             value={formInputs.phoneNumber}
                             onChange={changePhoneNumber}

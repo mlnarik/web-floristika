@@ -15,7 +15,7 @@ export const Reviews = () => (
         <p>
             <i>
                 &#8222;Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá
-                spolupráce a výsledek nad odčekávání skvělý. DĚKUJI
+                spolupráce a výsledek nad očekávání skvělý. DĚKUJI
                 MIRKO!&#8220;
             </i>
             <br /> - <b>Iva Malá</b>
@@ -23,7 +23,7 @@ export const Reviews = () => (
         <p>
             <i>
                 &#8222;Super servis, čerstvé a krásné květiny na přání, Mirka se
-                vcítila do našho přání a naše svatební výzdoba a kytice udělaly
+                vcítila do našeho přání a naše svatební výzdoba a kytice udělaly
                 náš velký den tím nejkrásnějším.&#8220;
             </i>
             <br /> - <b>Olinka Šišková</b>

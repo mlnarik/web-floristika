@@ -99,7 +99,7 @@ export const ServicesList = () => (
                 </p>
                 <p>
                     Připravím Vám kompletní květinovou výzdobu objektu, kde se
-                    svatba koná (např. výzdoba lavic v kostele, oddávací bráná v
+                    svatba koná (např. výzdoba lavic v kostele, oddávací brána v
                     zahradě apod.) Zajistím výzdobu pro svatební hosty. Jedná se
                     o svatební vývazky z myrty nebo buxusu a k nim
                     přišpendlených mašliček.

@@ -26,5 +26,9 @@ export const GalleryList = () => (
         <Img previewable small src="/static/gallery/22.jpg" />
         <Img previewable small src="/static/gallery/23.jpg" />
         <Img previewable small src="/static/gallery/24.jpg" />
+        <Img previewable small src="/static/gallery/25.jpg" />
+        <Img previewable small src="/static/gallery/26.jpg" />
+        <Img previewable small src="/static/gallery/27.jpg" />
+        <Img previewable small src="/static/gallery/28.jpg" />
     </>
 );

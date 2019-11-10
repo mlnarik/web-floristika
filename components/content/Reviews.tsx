@@ -15,8 +15,7 @@ export const Reviews = () => (
         <p>
             <i>
                 &#8222;Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá
-                spolupráce a výsledek nad očekávání skvělý. DĚKUJI
-                MIRKO!&#8220;
+                spolupráce a výsledek nad očekávání skvělý. DĚKUJI MIRKO!&#8220;
             </i>
             <br /> - <b>Iva Malá</b>
         </p>

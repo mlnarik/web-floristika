@@ -84,7 +84,7 @@ export const ContactForm = () => {
         setFormInputs({ ...formInputs, emailAddress: value });
     };
     const changePhoneNumber = e => {
-        const value = e.target.value;
+        const value = e?.target.value;
         setFormErrors({
             ...formErrors,
             phoneNumber: validatePhoneNumber(value)

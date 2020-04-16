@@ -14,6 +14,14 @@ export const Reviews = () => (
         <h3>Ohlasy od zákazníků</h3>
         <p>
             <i>
+                &#8222;Slečnu Blatnou mohu vřele doporučit. Je to šikovná a milá
+                slečna, která nám dokázala navázat květiny, přesně podle našich
+                představ. Jde vidět, že práce s květinami ji baví.&#8220;
+            </i>
+            <br /> - <b>Marie Frýdková</b>
+        </p>
+        <p>
+            <i>
                 &#8222;Jako nevěsta jsem byla s Mirkou na max spokojená. Skvělá
                 spolupráce a výsledek nad očekávání skvělý. DĚKUJI MIRKO!&#8220;
             </i>

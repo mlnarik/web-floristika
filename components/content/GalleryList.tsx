@@ -1,7 +1,15 @@
 import { Img } from '../common/Img';
+import styled from '@emotion/styled';
+
+const GalleryDiv = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+`;
 
 export const GalleryList = () => (
-    <>
+    <GalleryDiv>
         <Img previewable medium src="/static/gallery/7.jpg" />
         <Img previewable medium src="/static/gallery/8.jpg" />
         <Img previewable small src="/static/gallery/9.jpg" />
@@ -30,5 +38,10 @@ export const GalleryList = () => (
         <Img previewable small src="/static/gallery/26.jpg" />
         <Img previewable small src="/static/gallery/27.jpg" />
         <Img previewable small src="/static/gallery/28.jpg" />
-    </>
+        <Img previewable small src="/static/gallery/29.jpg" />
+        <Img previewable small src="/static/gallery/30.jpg" />
+        <Img previewable small src="/static/gallery/31.jpg" />
+        {/* <Img previewable small src="/static/gallery/32.jpg" /> */}
+        <Img previewable small src="/static/gallery/33.jpg" />
+    </GalleryDiv>
 );

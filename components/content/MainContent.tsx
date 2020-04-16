@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Logo } from '../header/Logo';
 import { Img } from '../common/Img';
 
-const ParallaxedImage = styled<'div', any>('div')`
+const ParallaxedImage = styled<'div', { url: string; cutTop?: boolean }>('div')`
     position: relative;
 
     height: ${props => (props.cutTop ? 'auto' : '55vh')};

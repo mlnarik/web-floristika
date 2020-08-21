@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Img } from '../common/Img';
+import { Img } from '../images/Img';
 import Link from 'next/link';
 import { Button } from 'semantic-ui-react';
 

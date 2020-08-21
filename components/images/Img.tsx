@@ -2,42 +2,67 @@ import LazyLoadingImg from 'react-image';
 import styled from '@emotion/styled';
 import { useState, useContext } from 'react';
 import { Placeholder } from 'semantic-ui-react';
-import { ModalControlContext } from '../content/MainContent';
+import { ModalControlContext } from '../layout/MainLayout';
+import { breakpoints } from '../../utils/constants/breakpoints';
+
+export enum ImgSize {
+    Fit,
+    Small,
+    Medium,
+    Large
+}
+
+export enum ImgCover {
+    Contain,
+    Cover
+}
+
+const maxHeight = 256;
 
 const StyledImg = styled(LazyLoadingImg)`
     display: block;
-    border: 1px solid white;
+    padding: 1px;
     border-radius: 4px;
     width: 100%;
+    image-orientation: from-image;
 `;
 
 const AutoSizedDiv = styled.div`
+    display: flex;
     max-width: 100%;
     max-height: 100%;
 `;
 
 const LargeSizedDiv = styled.div`
     width: 100%;
+    max-height: ${maxHeight * 4}px;
+    overflow: hidden;
 `;
 
 const MediumSizedDiv = styled.div`
     width: 50%;
+    max-height: ${maxHeight * 2}px;
+    overflow: hidden;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: ${breakpoints.tablet}) {
         width: 100%;
+        max-height: ${maxHeight * 4}px;
     }
 `;
 
 const SmallSizedDiv = styled.div`
     width: 25%;
-    height: 25%;
+    max-height: ${maxHeight * 1}px;
+    overflow: hidden;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: ${breakpoints.tablet}) {
         width: 50%;
+        max-height: ${maxHeight * 2}px;
     }
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: ${breakpoints.mobile}) {
         width: 100%;
+        max-height: ${maxHeight * 4}px;
     }
 `;
 
@@ -48,28 +73,35 @@ const ImageLoadingPlaceholder = styled(Placeholder)`
     border-radius: 4px;
 `;
 
-const withSizedImg = ({ fit, small, large }) => {
-    if (fit) {
-        return AutoSizedDiv;
-    } else if (small) {
-        return SmallSizedDiv;
-    } else if (large) {
-        return LargeSizedDiv;
-    } else {
-        return MediumSizedDiv;
+const withSizedImg = (size?: ImgSize) => {
+    switch (size) {
+        case ImgSize.Small:
+            return SmallSizedDiv;
+            break;
+        case ImgSize.Medium:
+            return MediumSizedDiv;
+            break;
+        case ImgSize.Large:
+            return LargeSizedDiv;
+            break;
+        case ImgSize.Fit:
+            return AutoSizedDiv;
+            break;
+        default:
+            return AutoSizedDiv;
     }
 };
 
-export const Img = (props: {
+interface Props {
     src: string;
     hideLoading?: boolean;
-    fit?: boolean;
-    small?: boolean;
-    medium?: boolean;
-    large?: boolean;
+    size?: ImgSize;
+    cover?: ImgCover;
     previewable?: boolean;
     onClick?: Function;
-}) => {
+}
+
+export const Img = (props: Props) => {
     const [isLoading, setLoadingStatus] = useState(!props.hideLoading);
 
     const modalControlContext = useContext(ModalControlContext);
@@ -84,7 +116,7 @@ export const Img = (props: {
         }
     };
 
-    const ImageFrame = withSizedImg(props as any);
+    const ImageFrame = withSizedImg(props.size);
 
     return (
         <ImageFrame>
@@ -93,8 +125,10 @@ export const Img = (props: {
                 onClick={showImagePreview}
                 onLoad={loadingFinished}
                 style={{
-                    display: isLoading ? 'none' : null,
-                    cursor: props.previewable ? 'pointer' : null
+                    display: isLoading ? 'none' : undefined,
+                    cursor: props.previewable ? 'pointer' : undefined,
+                    objectFit:
+                        props.cover === ImgCover.Contain ? 'contain' : 'cover'
                 }}
             />
             {isLoading && (

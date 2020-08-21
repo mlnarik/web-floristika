@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { MainContent } from '../components/content/MainContent';
+import { MainLayout } from '../components/layout/MainLayout';
 import { GalleryList } from '../components/content/GalleryList';
 import { ContactNow } from '../components/content/ContactNow';
 
 const Galerie = () => (
-    <MainContent bgImgName="contact" cutTop>
+    <MainLayout bgImgName="contact" cutTop>
         <GalleryList />
         <ContactNow />
-    </MainContent>
+    </MainLayout>
 );
 
 export default Galerie;

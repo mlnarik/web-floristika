@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { Logo } from '../header/Logo';
-import { Img } from '../common/Img';
+import { Img, ImgSize, ImgCover } from '../images/Img';
+import { breakpoints } from '../../utils/constants/breakpoints';
 
 const ParallaxedImage = styled<'div', { url: string; cutTop?: boolean }>('div')`
     position: relative;
@@ -67,10 +68,17 @@ const ImageModal = styled.div`
     justify-content: center;
 
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 5rem;
+    bottom: 5rem;
+    left: 5rem;
+    right: 5rem;
+
+    @media screen and (max-width: ${breakpoints.tablet}) {
+        top: 4.5rem;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+    }
 
     * {
         cursor: pointer;
@@ -92,7 +100,7 @@ const ImageModal = styled.div`
 
 export const ModalControlContext = React.createContext<any>(null);
 
-export const MainContent = (props: {
+export const MainLayout = (props: {
     cutTop?: boolean;
     bgImgName: string;
     children: any;
@@ -122,7 +130,8 @@ export const MainContent = (props: {
             {modalState.isOpen && (
                 <ImageModal onClick={closeModal}>
                     <Img
-                        fit
+                        size={ImgSize.Fit}
+                        cover={ImgCover.Contain}
                         hideLoading
                         src={modalState.url}
                         onClick={closeModal}

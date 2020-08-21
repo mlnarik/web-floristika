@@ -1,24 +1,6 @@
 import { useState } from 'react';
 import { Button, Divider, Grid, Form, Message } from 'semantic-ui-react';
-
-const MAILER_URL = 'https://mailsender.mlnarik.now.sh/api/sendmail';
-
-function sendEmail(emailAddress: string, message: string): Promise<any> {
-    const data = {
-        subject: 'Nová poptávka z webu',
-        sender: emailAddress,
-        receiver: 'mirkablatna@centrum.cz',
-        message: message
-    };
-    return fetch(MAILER_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-}
+import { sendEmail } from '../../utils/mailsender';
 
 export const ContactForm = () => {
     const [formInputs, setFormInputs] = useState({

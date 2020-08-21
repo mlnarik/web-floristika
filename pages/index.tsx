@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { MainContent } from '../components/content/MainContent';
+import { MainLayout } from '../components/layout/MainLayout';
 import { ServicesList } from '../components/content/ServicesList';
 import { Reviews } from '../components/content/Reviews';
 import { ContactNow } from '../components/content/ContactNow';
 
 const App = () => (
-    <MainContent bgImgName="index">
+    <MainLayout bgImgName="index">
         <ServicesList />
         <Reviews />
         <ContactNow />
-    </MainContent>
+    </MainLayout>
 );
 
 export default App;

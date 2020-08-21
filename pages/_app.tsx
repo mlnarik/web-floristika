@@ -9,7 +9,7 @@ import { Router } from 'next/dist/client/router';
 class MyApp extends App {
     public componentDidMount() {
         Router.events.on('routeChangeComplete', () => {
-            var element = document.querySelector('body');
+            const element = document.querySelector('body');
             if (element) {
                 element.scrollTop = 0;
             }
@@ -20,7 +20,7 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
 
         return (
-            <Container>
+            <>
                 <Head>
                     <title>Svatební floristika - Miroslava Blatná</title>
                     <meta
@@ -31,7 +31,7 @@ class MyApp extends App {
                 </Head>
                 <MenuNav />
                 <Component {...pageProps} />
-            </Container>
+            </>
         );
     }
 }

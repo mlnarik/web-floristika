@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { breakpoints } from '../../utils/constants/breakpoints';
 
 const StickyDiv = styled.div`
     position: fixed;
@@ -52,7 +53,7 @@ const MenuItem = styled.li`
     padding: 0 3rem;
     list-style-type: none;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: ${breakpoints.mobile}) {
         padding: 0.75rem;
     }
 `;

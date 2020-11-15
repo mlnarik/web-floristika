@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Img } from '../images/Img';
 import Link from 'next/link';
 import { Button } from 'semantic-ui-react';
+import { breakpoints } from '../../utils/constants/breakpoints';
 
 const Image = props => <Img large {...props} />;
 
@@ -14,7 +15,7 @@ const FrameDiv = styled.div`
     flex: 0 0 50%;
     position: relative;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: ${breakpoints.tablet}) {
         flex: 0 0 100%;
     }
 `;
@@ -23,11 +24,11 @@ const SmallFrameDiv = styled.div`
     flex: 0 0 25%;
     position: relative;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: ${breakpoints.tablet}) {
         flex: 0 0 50%;
     }
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: ${breakpoints.mobile}) {
         flex: 0 0 100%;
     }
 `;
@@ -46,7 +47,7 @@ const InfoDiv = styled.div`
     z-index: 1;
     text-align: left;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: ${breakpoints.tablet}) {
         position: static;
         width: 100%;
     }

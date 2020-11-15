@@ -57,7 +57,7 @@ const PageContentMain = styled.main`
     background-color: white;
     border-radius: 10px;
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: ${breakpoints.mobile}) {
         padding: 1rem;
     }
 `;
